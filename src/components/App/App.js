@@ -9,9 +9,9 @@ import Yelp  from '../../util/yelp';
 class App extends React.Component {
   constructor(props){
     super(props);
-    this.state = ({
+    this.state = {
       businesses: [ ],
-    });
+    };
 
     this.searchYelp = this.searchYelp.bind(this);
 
@@ -19,9 +19,9 @@ class App extends React.Component {
 
   searchYelp(term, location, sortBy) {
     Yelp.searchYelp(term, location, sortBy).then((businesses) => {this.setState({
-      businesses: businesses});
+            businesses: businesses});
     });
-}
+  }
   render(){
   return (
     <div className="App">
